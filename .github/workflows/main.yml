@@ -1,6 +1,7 @@
 name: Set Github_Env
 on:
   push:
+    branches: main
 jobs:
   store-env:
     runs-on: ubuntu-latest
