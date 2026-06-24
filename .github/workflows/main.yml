@@ -1,13 +1,15 @@
 name: Set Github_Env
 on:
   push:
+    branches:
+      - dev
 jobs:
   store-env:
     runs-on: ubuntu-latest
     steps:
       - name: store env
         run: |
-          DYNAMIC_VER="v3.0.${{ github.run_number }}"
+          DYNAMIC_VER="v4.0.${{ github.run_number }}"
           echo "MY_VERSION=$DYNAMIC_VER" >> $GITHUB_ENV
 
       - name: display env
