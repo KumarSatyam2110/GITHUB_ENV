@@ -13,5 +13,5 @@ jobs:
         
       - name: Production Step
         if: github.ref_name == 'main'
-        run: echo "Deploying to production..."
+        run: echo "Deploying to production...."
     
