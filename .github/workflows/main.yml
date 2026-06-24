@@ -4,8 +4,10 @@ on:
     branches:
       - test
 jobs:
+  
   store-env:
     runs-on: ubuntu-latest
+    if: github.ref_name == 'main'
     steps:
       - name: store env
         run: |
@@ -14,4 +16,8 @@ jobs:
 
       - name: display env
         run: echo "Deploying version $MY_VERSION"
+
+      - name: Production Step
+        if: github.ref_name == 'main'
+        run: echo "Deploying to production..."
     
